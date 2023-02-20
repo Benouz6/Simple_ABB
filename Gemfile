@@ -78,3 +78,6 @@ end
 
 # Faker
 gem 'faker'
+
+# Devise
+gem "devise"
