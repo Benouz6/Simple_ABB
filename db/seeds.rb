@@ -10,7 +10,7 @@ flat2 = Flat.create(name: 'Appart in London', description: 'Amazing', address: '
 flat3 = Flat.create(name: 'Appart in Montreal', description: 'Amazing', address: 'Montreal 11', price: 100)
 flat4 = Flat.create(name: 'Appart in New York', description: 'Amazing', address: 'New York 11', price: 100)
 
-user1 = User.create(username: "ben", )
+user1 = User.create(username: "ben")
 
 flat1.user_id =
 
