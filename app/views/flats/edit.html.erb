@@ -1,6 +1,5 @@
-<h1>Add a flat</h1>
-
-<%= link_to 'All flats', flats_path %>
+<h1>Edit the flat</h1>
+<%= link_to 'flat', flat_path(@flat) %>
 <%= simple_form_for(@flat) do |f| %>
   <%= f.input :name %>
   <%= f.input :address %>
