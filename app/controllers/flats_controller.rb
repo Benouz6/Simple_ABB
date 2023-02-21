@@ -37,6 +37,10 @@ class FlatsController < ApplicationController
     redirect_to flats_path, status: :see_other
   end
 
+  def my_flats
+    @flats = current_user.flats
+  end
+
   private
 
   def flat_params
