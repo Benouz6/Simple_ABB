@@ -4,5 +4,8 @@
 <%= link_to 'Delete the flat', flat_path(@flat), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
 
 <h3><%= @flat.description %></h3>
+<% @flat.photos.each do |photo|%>
+  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>
 <h3><%= @flat.address %></h3>
 <h3><%= @flat.price %></h3>
