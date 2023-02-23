@@ -20,6 +20,10 @@ class BookingsController < ApplicationController
     @bookings = current_user.bookings
   end
 
+  def my_reservations
+    @bookings = Booking.select{ |book| book.user == current_user }
+  end
+
   private
 
   def booking_params
