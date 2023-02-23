@@ -81,3 +81,8 @@ gem 'faker'
 
 # Devise
 gem "devise"
+
+# Cloudinary
+gem "cloudinary"
+
+gem "dotenv-rails", groups: [:development, :test]
