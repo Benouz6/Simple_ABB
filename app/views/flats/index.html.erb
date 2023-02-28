@@ -1,4 +1,6 @@
-<h1>Flats</h1>
-<% @flats.each do |flat| %>
-  <%= link_to flat.name, flat_path(flat) %>
-<% end %>
+<div class="container">
+  <h1>Flats</h1>
+  <div class="cards">
+   <%= render 'shared/card' %>
+  </div>
+</div>
