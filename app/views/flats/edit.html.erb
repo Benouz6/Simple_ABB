@@ -1,9 +1,5 @@
-<h1>Edit the flat</h1>
-<%= link_to 'flat', flat_path(@flat) %>
-<%= simple_form_for(@flat) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :address %>
-  <%= f.input :description %>
-  <%= f.input :price %>
-  <%= f.submit %>
-<% end %>
+<div class="container">
+  <h1>Edit the flat</h1>
+  <%= link_to 'flat', flat_path(@flat) %>
+  <%= render 'shared/form' %>
+</div>

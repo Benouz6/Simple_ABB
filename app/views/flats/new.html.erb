@@ -1,11 +1,6 @@
-<h1>Add a flat</h1>
+<div class="container">
+  <h1>Add a flat</h1>
 
-<%= link_to 'All flats', flats_path %>
-<%= simple_form_for(@flat) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :address %>
-  <%= f.input :description %>
-  <%= f.input :price %>
-  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-  <%= f.submit %>
-<% end %>
+  <%= link_to 'All flats', flats_path %>
+  <%= render 'shared/form' %>
+</div>
