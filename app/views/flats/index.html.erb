@@ -3,4 +3,9 @@
   <div class="cards">
    <%= render 'shared/card' %>
   </div>
+  <div style="width: 100%; height: 600px;"
+  data-controller="controller-map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value='pk.eyJ1IjoiYmVub3V6NiIsImEiOiJjbGFqc3Uza28wMm5oM3ZvMjc0cGUxb3U2In0.ZOQyVdqUGXOvZ1crEz-L1w'
+  id='map'></div>
 </div>

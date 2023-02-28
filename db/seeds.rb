@@ -2,6 +2,7 @@ require 'faker'
 require "open-uri"
 
 puts "Cleaning database..."
+Booking.destroy_all
 Flat.destroy_all
 User.destroy_all
 
@@ -13,13 +14,13 @@ photo4 = URI.open("https://res.cloudinary.com/dmnmqtpct/image/upload/v1651074563
 
 puts "Creating flats..."
 
-flat1 = Flat.create(name: 'Appart in Paris', description: 'Amazing', address: 'Paris 11', price: 100)
+flat1 = Flat.create(name: 'Appart in Paris', description: 'Amazing', address: "5333 Av. Casgrain, Montreal, QC", price: 100)
 flat1.photos.attach(io: photo1, filename: 'house', content_type: "image/png")
-flat2 = Flat.create(name: 'Appart in London', description: 'Amazing', address: 'London 11', price: 100)
+flat2 = Flat.create(name: 'Appart in London', description: 'Amazing', address: '5333 Av. Saint-Denis, Montreal, QC', price: 110)
 flat2.photos.attach(io: photo2, filename: 'house2', content_type: "image/png")
-flat3 = Flat.create(name: 'Appart in Montreal', description: 'Amazing', address: 'Montreal 11', price: 100)
+flat3 = Flat.create(name: 'Appart in Montreal', description: 'Amazing', address: '3550 saint-Germain, Montreal, QC', price: 90)
 flat3.photos.attach(io: photo3, filename: 'house3', content_type: "image/png")
-flat4 = Flat.create(name: 'Appart in New York', description: 'Amazing', address: 'New York 11', price: 100)
+flat4 = Flat.create(name: 'Appart in New York', description: 'Amazing', address: '5333 Saint-Laurent, Montreal, QC', price: 1100)
 flat4.photos.attach(io: photo4, filename: 'house4', content_type: "image/png")
 
 puts 'Created flats'
