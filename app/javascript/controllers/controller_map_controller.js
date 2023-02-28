@@ -2,14 +2,16 @@ import { Controller } from "@hotwired/stimulus";
 
 export default class extends Controller {
   static values = {
-    apiKey: String,
+    apiKey:
+      "pk.eyJ1IjoiYmVub3V6NiIsImEiOiJjbGFqc3Uza28wMm5oM3ZvMjc0cGUxb3U2In0.ZOQyVdqUGXOvZ1crEz-L1w",
     markers: Array,
   };
 
   connect() {
-    console.log('hello from ma[');
+    console.log("hello from map");
     mapboxgl.accessToken = this.apiKeyValue;
     this.#addMarkersToMap();
+    console.log(this.apiKeyValue);
     this.#fitMapToMarkers();
 
     this.map = new mapboxgl.Map({
@@ -19,15 +21,12 @@ export default class extends Controller {
   }
   #addMarkersToMap() {
     this.markersValue.forEach((marker) => {
-      new mapboxgl.Marker()
-        .setLngLat([ marker.lng, marker.lat ])
-        .addTo(this.map)
-    })
+      new mapboxgl.Marker().setLngLat([marker.lng, marker.lat]).addTo(this.map);
+    });
   }
   #fitMapToMarkers() {
   const bounds = new mapboxgl.LngLatBounds()
   this.markersValue.forEach(marker => bounds.extend([ marker.lng, marker.lat ]))
-  this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 })
-}
-
+  // this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 })
+  }
 }
