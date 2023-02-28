@@ -21,7 +21,23 @@ class BookingsController < ApplicationController
   end
 
   def my_reservations
-    @bookings = Booking.select{ |book| book.user == current_user }
+    my_bookings = current_user.flats
+    @bookings = Booking.where(flat_id: my_bookings)
+  end
+
+  def accepted
+    @booking = Booking.find(params[:id])
+    @booking.status = 1
+    @booking.save
+
+    redirect_to my_reservations_path
+  end
+
+  def rejected
+    @booking = Booking.find(params[:id])
+    @booking.status = 2
+    @booking.save
+    redirect_to my_reservations_path
   end
 
   private
