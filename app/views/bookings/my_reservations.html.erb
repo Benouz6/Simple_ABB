@@ -1,0 +1,13 @@
+<h1>My reservations</h1>
+<% @bookings.each do |booking| %>
+<ul>
+  <li><%= booking.start_date %></li>
+  <li><%= booking.end_date %></li>
+  <li><%= booking.status %></li>
+  <li><%= User.find(booking.user_id).username %></li>
+  <li>
+    <%= link_to 'Accept', rejected_path(booking), data: {turbo_method: :patch} %>
+    <%= link_to 'Reject', rejected_path(booking), data: {turbo_method: :patch} %>
+  </li>
+</ul>
+<% end %>

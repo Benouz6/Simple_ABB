@@ -1,0 +1,9 @@
+<h1>My future travel</h1>
+<ul>
+  <% @bookings.each do |booking| %>
+    <li><%= booking.start_date %></li>
+    <li><%= booking.end_date %></li>
+    <li><%= booking.flat.user.username %></li>
+    <li><%= booking.status %></li>
+  <% end %>
+</ul>
