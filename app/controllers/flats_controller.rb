@@ -49,6 +49,14 @@ class FlatsController < ApplicationController
     @flats = current_user.flats
   end
 
+  def result
+    if params[:query].present?
+      @flats = Flat.where("address ILIKE ?", "%#{params[:query]}%")
+    else
+      @flats = Flat.all
+    end
+  end
+
   private
 
   def flat_params

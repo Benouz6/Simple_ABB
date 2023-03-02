@@ -85,10 +85,11 @@ gem "devise"
 # Cloudinary
 gem "cloudinary"
 
-# Font-awesome
-gem "font-awesome-sass", "~> 6.1"
 
-gem "dotenv-rails", groups: [:development, :test]
+# gem "dotenv-rails", groups: [:development, :test]
 
 # Geocoder
 gem "geocoder"
+
+# PG search
+gem "pg_search"
