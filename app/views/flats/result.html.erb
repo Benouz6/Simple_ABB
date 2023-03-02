@@ -1,15 +1,5 @@
 <div class="container">
-  <h1>Flats</h1>
-
-  <%= form_with url: result_path, method: :get, class: "d-flex" do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Find a flat"
-    %>
-    <%= submit_tag "Search", class: "btn btn-primary" %>
-  <% end %>
-  
+  <h1>Result</h1>
   <div class="cards">
    <%= render 'shared/card' %>
   </div>

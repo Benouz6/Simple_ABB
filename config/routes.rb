@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     resources :bookings, only: %i[new create]
   end
 
+  get '/result', to: 'flats#result', as: :result
+
   get '/my_flats', to: "flats#my_flats"
 
   get '/my_travels', to: "bookings#my_travels", as: :my_travels
