@@ -1,24 +1,32 @@
 <div class="container">
   <div class="title-show-page">
     <h1 class='text-center'><%= @flat.name %></h1>
-    <div class="title-links">
-      <li><i class="fa fa-light fa-pen"></i><%= link_to 'Edit the flat', edit_flat_path %></li>
-      <li><i class="fa fa-thin fa-trash"></i><%= link_to 'Delete the flat', flat_path(@flat), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></li>
-    </div>
-  </div>
-
-
-
-  <%= link_to 'All flats', flats_path %>
-  <ul>
     <% if current_user == @flat.user %>
-
-    <% else %>
+      <div class="title-links">
+      <ul>
+        <li>
+          <%= link_to edit_flat_path do %>
+            <i class="fa fa-light fa-pen"></i>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to flat_path(@flat), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+            <i class="fa fa-thin fa-trash"></i>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+    <% end %>
+  </div>
+    <%= link_to flats_path do %>
+    <i class="fa-regular fa-paper-plane"></i>
+    <% end %>
+  <ul>
+    <% if current_user != @flat.user %>
       <%= link_to 'Book the flat',  new_flat_booking_path(@flat)  %>
     <% end %>
   </ul>
   <p><%= @flat.user.username %></p>
-<i class="fa fa-light fa-pen-nib"></i>
   <h3><%= @flat.description %></h3>
   <% @flat.photos.each do |photo|%>
     <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
