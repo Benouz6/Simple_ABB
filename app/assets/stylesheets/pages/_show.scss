@@ -1,0 +1,17 @@
+.title-show-page {
+  display: flex;
+  justify-content: center;
+}
+
+.title-links li{
+  list-style-type: none;
+}
+
+.title-links a{
+  color: black;
+  transition: .3s;
+}
+
+.title-links a:hover{
+  color: orange;
+}

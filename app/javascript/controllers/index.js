@@ -4,8 +4,8 @@
 
 import { application } from "./application"
 
-import ControllerMapController from "./controller_map_controller"
-application.register("controller-map", ControllerMapController)
+import MapController from "./map_controller"
+application.register("map", MapController)
 
 import ControllerTestController from "./controller_test_controller"
 application.register("controller-test", ControllerTestController)
