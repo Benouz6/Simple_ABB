@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
+  get 'reviews/new'
   devise_for :users
 
   root to: "flats#index"
 
   resources :flats do
     resources :bookings, only: %i[new create]
+    resources :reviews, only: %i[new create]
   end
 
   get '/result', to: 'flats#result', as: :result

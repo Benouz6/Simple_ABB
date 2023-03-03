@@ -1,4 +1,5 @@
 class FlatsController < ApplicationController
+
   def index
     @flats = Flat.geocoded
     @markers = @flats.map do |flat|
@@ -27,6 +28,7 @@ class FlatsController < ApplicationController
 
   def show
     @flat = Flat.find(params[:id])
+    @reviews = Review.where(flat_id: @flat.id)
   end
 
   def edit
