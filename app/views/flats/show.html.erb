@@ -37,7 +37,7 @@
     <%= link_to 'Add a comment', new_flat_review_path(@flat), class:'btn btn-primary' %>
     <ul>
       <% @reviews.each do |review| %>
-        <li><%= review.content %>. Rate: <%= review.rating %></li>
+        <li><%= review.content %>. Rate: <%= review.rating %> by: <%= review.user %></li>
       <% end %>
     </ul>
   </div>
