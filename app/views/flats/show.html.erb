@@ -33,4 +33,12 @@
   <% end %>
   <h3><%= @flat.address %></h3>
   <h3><%= @flat.price %></h3>
+  <div class="reviews">
+    <%= link_to 'Add a comment', new_flat_review_path(@flat), class:'btn btn-primary' %>
+    <ul>
+      <% @reviews.each do |review| %>
+        <li><%= review.content %>. Rate: <%= review.rating %></li>
+      <% end %>
+    </ul>
+  </div>
 </div>
