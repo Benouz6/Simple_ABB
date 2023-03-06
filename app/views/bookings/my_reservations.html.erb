@@ -6,7 +6,7 @@
   <li><%= booking.status %></li>
   <li><%= User.find(booking.user_id).username %></li>
   <li>
-    <%= link_to 'Accept', accepted_path(booking), data: {turbo_method: P:patch} %>
+    <%= link_to 'Accept', accepted_path(booking), data: {turbo_method: :patch} %>
     <%= link_to 'Reject', rejected_path(booking), data: {turbo_method: :patch} %>
   </li>
 </ul>
